@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 记事本图标：白底 + 黑框圆角方，里面是便签线稿，跟桌面其它图标同一套语言
+
+     关于「改图标大小没生效」：这是 vector，改 android:width/height 不会改变
+     桌面上的观感 —— 桌面会把 drawable 缩放进固定的图标槽位，真正决定
+     「看起来多大」的是图案在 viewport 里占多少。原图只占 6..42（36/48≈75%），
+     四周留白多，就显得比邻居小一圈。
+     这里用一个 group 把整块图案放大：1.0 = 原样，1.2 = 现在（约 90%），
+     想更满调到 1.3。改完必须重新 build + install。 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <group
+        android:pivotX="24"
+        android:pivotY="24"
+        android:scaleX="1.2"
+        android:scaleY="1.2">
+
+        <!-- 外框：白底、黑边、圆角 -->
+        <path
+            android:pathData="M13,6 H35 A7,7 0 0 1 42,13 V35 A7,7 0 0 1 35,42 H13 A7,7 0 0 1 6,35 V13 A7,7 0 0 1 13,6 Z"
+            android:strokeColor="#000000"
+            android:strokeWidth="2.4"
+            android:fillColor="#FFFFFF" />
+
+        <!-- 便签纸 -->
+        <path
+            android:pathData="M18,13 h7 l5,5 v15 h-12 z"
+            android:strokeColor="#000000"
+            android:strokeWidth="1.8"
+            android:fillColor="#00000000"
+            android:strokeLineJoin="round" />
+
+        <!-- 折角 -->
+        <path
+            android:pathData="M25,13 v5 h5"
+            android:strokeColor="#000000"
+            android:strokeWidth="1.8"
+            android:fillColor="#00000000"
+            android:strokeLineJoin="round" />
+
+        <!-- 文字行 -->
+        <path
+            android:pathData="M21,23 h6 M21,27 h6 M21,31 h4"
+            android:strokeColor="#000000"
+            android:strokeWidth="1.8"
+            android:strokeLineCap="round" />
+    </group>
+</vector>

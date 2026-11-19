@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 加号：两条等粗线段，几何居中 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:pathData="M24,11 L24,37 M11,24 L37,24"
+        android:strokeColor="#000000"
+        android:strokeWidth="4"
+        android:strokeLineCap="butt"
+        android:fillColor="#00000000" />
+</vector>
