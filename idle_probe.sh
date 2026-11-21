@@ -1,7 +1,7 @@
 #!/bin/bash
 # 待机活动量采样：10 分钟内两个 App 用了多少 CPU、电脑端收到多少请求。
 # 设备一直在充电，测电量没有意义，这里测的是"活不活跃"。
-cd . || exit 1
+cd "$(dirname "$0")" || exit 1
 
 get_cpu() {
   local pkg=$1
@@ -11,7 +11,7 @@ get_cpu() {
   adb shell "cat /proc/$pid/stat" 2>/dev/null | awk '{print $14+$15}' | tr -d '\r'
 }
 
-LOG=../VoiceKey/pc/out/receiver.log
+LOG="${VOICEKEY_LOG:-../VoiceKey/pc/out/receiver.log}"
 A0=$(get_cpu com.zuakeo.inknote)
 V0=$(get_cpu com.zuakeo.voicekey)
 L0=$(wc -l < "$LOG" 2>/dev/null || echo 0)

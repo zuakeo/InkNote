@@ -36,11 +36,11 @@
 
 | 部分 | 路径 |
 |---|---|
-| 源码 / 构建 | `InkNote\`（`src/`、`build.sh`、`dist/`） |
+| 源码 / 构建 | 本仓库根目录（`src/`、`build.sh`、`dist/`） |
 | 安装脚本 | `install.sh`（装 App + 权限 + root + 电脑地址/Key/热词） |
 | 自测脚本 | `test.sh` |
-| 录音入口 | `VoiceKey\`（VoiceKey 0.14 起支持离线转存） |
-| 电脑端 | `pc\inkvoice.py`（`mode=text` 同步返回文字） |
+| 录音入口 | VoiceKey 仓库（VoiceKey 0.14 起支持离线转存） |
+| 电脑端 | VoiceKey 仓库的 `pc/inkvoice.py`（`mode=text` 同步返回文字） |
 | 守护 | Magisk 模块 `/data/adb/modules/voicekey_mokey/service.sh`（同时守 VoiceKey 和便签） |
 
 ## 数据
